@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Risk Log</title>
+
+  <style>
+    body{
+      margin:40px;
+      font-family:"Segoe UI", Roboto, Arial, sans-serif;
+      background:#ffffff;
+      color:#0f172a;
+    }
+
+    h1{
+      font-size:18px;
+      text-transform:uppercase;
+      letter-spacing:.5px;
+      margin-bottom:10px;
+    }
+
+    p{
+      max-width:900px;
+      font-size:13px;
+      line-height:1.6;
+      color:#334155;
+      margin-bottom:22px;
+    }
+
+    /* Card container */
+    .card{
+      border:1px solid #e5e7eb;
+      border-radius:14px;
+      background:#ffffff;
+      box-shadow:0 10px 28px rgba(15,23,42,.08);
+      overflow:hidden;
+    }
+
+    /* Accent bar */
+    .accent{
+      height:6px;
+      background:linear-gradient(90deg,#2563eb,#38bdf8,#22c55e);
+    }
+
+    table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      font-size:13px;
+    }
+
+    thead th{
+      background:#f8fafc;
+      color:#0f172a;
+      padding:14px 12px;
+      text-align:center;
+      font-weight:700;
+      border-bottom:2px solid #c7d2fe;
+    }
+
+    tbody td{
+      padding:14px 12px;
+      border-bottom:1px solid #e5e7eb;
+      vertical-align:top;
+    }
+
+    tbody tr:last-child td{
+      border-bottom:none;
+    }
+
+    tbody tr{
+      transition:background .2s ease;
+    }
+
+    tbody tr:hover{
+      background:#f1f5f9;
+    }
+
+    td.center{
+      text-align:center;
+      font-weight:700;
+    }
+
+    td.mitigation{
+      line-height:1.65;
+      color:#1e293b;
+    }
+
+    /* Risk badges */
+    .risk{
+      display:inline-block;
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.3px;
+      min-width:72px;
+      text-align:center;
+    }
+
+    .low{
+      background:#ecfdf5;
+      color:#065f46;
+      border:1px solid #6ee7b7;
+    }
+
+    .medium{
+      background:#fffbeb;
+      color:#92400e;
+      border:1px solid #fde68a;
+    }
+
+    .high{
+      background:#fef2f2;
+      color:#7f1d1d;
+      border:1px solid #fecaca;
+    }
+
+    caption{
+      caption-side:bottom;
+      padding:12px;
+      font-size:11px;
+      color:#64748b;
+      text-align:left;
+      background:#f8fafc;
+      border-top:1px solid #e5e7eb;
+    }
+
+    /* Print-safe */
+    @media print{
+      .card{
+        box-shadow:none;
+        border:1px solid #000;
+      }
+      .accent{ display:none; }
+      tbody tr:hover{ background:transparent; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Risk Log</h1>
+
+  <p>
+    The risk log identifies potential issues that could negatively affect the successful
+    completion of the project and outlines mitigation strategies to reduce their impact.
+  </p>
+
+  <div class="card">
+    <div class="accent"></div>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width:6%">ID</th>
+          <th style="width:26%">Risk Name</th>
+          <th style="width:12%">Occurrence</th>
+          <th style="width:12%">Impact</th>
+          <th>Plan B / Mitigation Strategy</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td class="center">R1</td>
+          <td>Limited access to real cooperative environments</td>
+          <td class="center"><span class="risk medium">Medium</span></td>
+          <td class="center"><span class="risk medium">Medium</span></td>
+          <td class="mitigation">
+            Use simulated environments and test data; design the system so it can later be
+            deployed in real cooperative settings.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="center">R2</td>
+          <td>Low facial recognition accuracy in poor lighting or motion</td>
+          <td class="center"><span class="risk medium">Medium</span></td>
+          <td class="center"><span class="risk high">High</span></td>
+          <td class="mitigation">
+            Collect training images under varied lighting conditions; tune thresholds; and
+            clearly document limitations in the report.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="center">R3</td>
+          <td>Hardware limitations on employee devices</td>
+          <td class="center"><span class="risk medium">Medium</span></td>
+          <td class="center"><span class="risk medium">Medium</span></td>
+          <td class="mitigation">
+            Optimise code, reduce frame rate or resolution, and ensure the system runs on
+            standard CPUs without specialised hardware.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="center">R4</td>
+          <td>Privacy and ethical concerns from employees</td>
+          <td class="center"><span class="risk low">Low</span></td>
+          <td class="center"><span class="risk high">High</span></td>
+          <td class="mitigation">
+            Process all facial data locally, avoid storing raw images, obtain informed consent,
+            and limit system use strictly to device security.
+          </td>
+        </tr>
+
+        <tr>
+          <td class="center">R5</td>
+          <td>Time constraints during development phase</td>
+          <td class="center"><span class="risk medium">Medium</span></td>
+          <td class="center"><span class="risk high">High</span></td>
+          <td class="mitigation">
+            Prioritise core features (detection, recognition, locking, logging) and treat
+            advanced features as future work.
+          </td>
+        </tr>
+      </tbody>
+
+      <caption>
+        Table: Risk log for the facial recognition system project (cybersecurity-oriented).
+      </caption>
+    </table>
+  </div>
+
+</body>
+</html>
