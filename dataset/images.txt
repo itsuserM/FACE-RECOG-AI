@@ -1,0 +1,1 @@
+make sure to upload the images in this directories so that it will be setted as authenticated user
